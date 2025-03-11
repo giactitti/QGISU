@@ -1,0 +1,10 @@
+r.slopeunits
+r.slopeunits.clean - Cleans slope units layer, e.g. results of r.slopeunits.create.
+Raster (r.*)
+QgsProcessingParameterRasterLayer|demmap|Input digital elevation model|None|False
+QgsProcessingParameterRasterLayer|plainsmap|Input raster map of alluvial plains|None|True
+QgsProcessingParameterRasterLayer|slumap|Input Slope Units layer|None|False
+QgsProcessingParameterNumber|cleansize|Slope Units size to be removed|QgsProcessingParameterNumber.Integer|25000|False|None|None
+QgsProcessingParameterBoolean|-m|m|False
+QgsProcessingParameterBoolean|-n|n|False
+QgsProcessingParameterRasterDestination|slumapclean|Output Slope Units layer, cleaned

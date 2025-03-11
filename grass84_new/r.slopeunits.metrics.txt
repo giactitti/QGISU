@@ -1,0 +1,11 @@
+r.slopeunits
+r.slopeunits.metrics - Creates metrics for slope units.
+Raster (r.*)
+QgsProcessingParameterFeatureSource|basin|Input basin|2|None|False
+QgsProcessingParameterRasterLayer|demmap|Input digital elevation model|None|False
+QgsProcessingParameterNumber|cleansize|Slope Units size to be removed|QgsProcessingParameterNumber.Integer|25000|False|None|None
+QgsProcessingParameterNumber|areamin|Minimum area (m^2) below which the slope unit is not further segmented|QgsProcessingParameterNumber.Integer|None|False|None|None
+QgsProcessingParameterNumber|cvmin|Minimum value of the circular variance (0.0-1.0) below which the slope unit is not further segmented|QgsProcessingParameterNumber.Double|None|False|None|None
+QgsProcessingParameterNumber|resolution|Resolution|QgsProcessingParameterNumber.Double|None|False|None|None
+QgsProcessingParameterRasterDestination|slumapclean|Output Slope Units layer, cleaned
+QgsProcessingParameterFileDestination|outfile|Output file with metrics|*.dat|None|True

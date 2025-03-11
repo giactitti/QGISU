@@ -1,0 +1,18 @@
+r.slopeunits
+r.slopeunits.optimize - Optimize inputs for slope units.
+Raster (r.*)
+QgsProcessingParameterRasterLayer|demmap|Input digital elevation model|None|False
+QgsProcessingParameterRasterLayer|plainsmap|Input raster map of alluvial plains|None|True
+QgsProcessingParameterRasterLayer|slumap|Slope Units layer (the main output of r.slopeunits.create)|None|False
+QgsProcessingParameterRasterLayer|slumapclean|Slope Units layer, cleaned (the main output of r.slopeunits.clean)|None|True
+QgsProcessingParameterNumber|thresh|Initial threshold (m^2)|QgsProcessingParameterNumber.Integer|None|False|None|None
+QgsProcessingParameterNumber|rf|Factor used to iterativelly reduce initial threshold: newthresh=thresh-thresh/reductionfactor|QgsProcessingParameterNumber.Integer|None|False|None|None
+QgsProcessingParameterNumber|maxiteration|maximum number of iteration to do before the procedure is in any case stopped|QgsProcessingParameterNumber.Integer|None|False|None|None
+QgsProcessingParameterNumber|cleansize|Slope Units size to be removed|QgsProcessingParameterNumber.Integer|25000|False|None|None
+QgsProcessingParameterNumber|cvmin|Start search with these initial minimum and maximum values of the circular variance (0.0-1.0) below which the slope unit is not further segmented|QgsProcessingParameterNumber.Double|0.05|False|None|None
+QgsProcessingParameterNumber|areamin|Start search with these initial minimum and maximum values of the area (m^2) below which the slope unit is not further segmented|QgsProcessingParameterNumber.Integer|50000|False|None|None
+QgsProcessingParameterNumber|epsilonx|Stop loop when difference of cvmin limits is lesser than this value|QgsProcessingParameterNumber.Double|0.01|False|None|None
+QgsProcessingParameterNumber|epsilony|Stop loop when difference of areamin limits is lesser than this value|QgsProcessingParameterNumber.Integer|50000|False|None|None
+QgsProcessingParameterNumber|convergence|Convergence factor for MFD in r.watershed (1-10) 1 = most diverging flow, 10 = most converging flow. Recommended: 5|QgsProcessingParameterNumber.Integer|5|True|None|None
+QgsProcessingParameterBoolean|-s|s|False
+QgsProcessingParameterFolderDestination|outdir|Output directory for intermediate results for all cvmin and areamin values and final results. Default folder "outdir" in current working directory.|None|False

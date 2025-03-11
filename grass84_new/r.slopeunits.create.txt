@@ -1,0 +1,20 @@
+r.slopeunits
+r.slopeunits.create - Creates a raster layer of slope units. Optionally, a vector map can be created.
+Raster (r.*)
+QgsProcessingParameterRasterLayer|demmap|Input digital elevation model|None|False
+QgsProcessingParameterRasterLayer|plainsmap|Input raster map of alluvial plains|None|True
+QgsProcessingParameterNumber|thresh|Initial threshold (m^2)|QgsProcessingParameterNumber.Integer|None|False|None|None
+QgsProcessingParameterNumber|areamin|Minimum area (m^2) below which the slope unit is not further segmented|QgsProcessingParameterNumber.Integer|None|False|None|None
+QgsProcessingParameterNumber|areamax|Maximum area (m^2) above which the slope unit is segmented irrespective of aspect|QgsProcessingParameterNumber.Integer|None|True|None|None
+QgsProcessingParameterNumber|cvmin|Minimum value of the circular variance (0.0-1.0) below which the slope unit is not further segmented|QgsProcessingParameterNumber.Double|None|False|None|None
+QgsProcessingParameterNumber|rf|Factor used to iterativelly reduce initial threshold: newthresh=thresh-thresh/reductionfactor|QgsProcessingParameterNumber.Integer|None|False|None|None
+QgsProcessingParameterNumber|maxiteration|maximum number of iteration to do before the procedure is in any case stopped|QgsProcessingParameterNumber.Integer|None|False|None|None
+QgsProcessingParameterNumber|generalize_treshold|Threshold for maximal tolerance value for v.generalize|QgsProcessingParameterNumber.Double|20|True|None|None
+QgsProcessingParameterNumber|convergence|Convergence factor for MFD in r.watershed (1-10) 1 = most diverging flow, 10 = most converging flow. Recommended: 5|QgsProcessingParameterNumber.Integer|5|True|None|None
+QgsProcessingParameterBoolean|-g|g|False
+QgsProcessingParameterBoolean|-s|s|False
+QgsProcessingParameterRasterDestination|slumap|Output Slope Units layer
+QgsProcessingParameterVectorDestination|slumapvect|Output Slope Units layer as vector layer|QgsProcessing.TypeVectorPolygon|None|True
+QgsProcessingParameterRasterDestination|circvarmap|Output Circular Variance layer
+QgsProcessingParameterRasterDestination|areamap|Output Area layer; values in square meters
+
